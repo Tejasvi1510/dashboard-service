@@ -90,8 +90,10 @@ public class CompanyServiceImpl implements CompanyService {
             return cRepository.findDashboardDetailsByCountry(filter);
         } else if (filterName.equalsIgnoreCase("city")) {
             return cRepository.findDashboardDetailsByCity(filter);
-        } else {
+        } else if (filterName.equalsIgnoreCase("all")) {
             return cRepository.findDashboardDetails();
+        } else {
+            return null;
         }
     }
 }
